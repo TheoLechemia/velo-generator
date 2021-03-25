@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <link href="static/style.css" type="text/css" rel="stylesheet" />
+        <script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+        <script src="static/node_modules/vue/dist/vue.global.js"></script>
+        <script src="static/gauge.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <style>
+            svg {
+                fill:green;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+        <div id="logo">
+            <img width="250" src="static/images/logo.png" alt="">
+
+
+        </div>
+        <h3 class="center"> LA BICYCLETTE GÉNÉRATRICE D'ÉLECTRICITE </h3>   
+
+
+        <div class="container">
+            <div id="app">
+                <!-- <h2 id="main-title" class="center"> VÉLECTROGÈNE </h2>
+                <h3 class="center"> LA BICYCLETTE GÉNÉRATRICE D'ÉLECTRICITE </h3> -->
+                
+               <div id="canvas-container">
+                <canvas id="gauge"> 
+                </canvas>
+                    <div id="data">
+                        <h4>PRODUCTION <span class="red-generator"> <br> ${powerProduction} </span>  </h4>
+                        <h4>CONSOMMATION <span class="red-generator"> <br> ${powerProduction}  </span> </h4>
+                    </div>
+                
+               </div>
+
+
+    
+            </div>
+            <br>
+            <div class="row">
+                <span class="father">
+                    <img src="static/images/velo1.svg" alt="">
+                    <span class="label label-custom velo-name">1</span>
+
+                     <!-- <span>1</span> -->
+
+                </span>
+                <span class="father pull-right">
+                    <img src="static/images/velo4.svg" alt="">
+                    <span class="label label-custom velo-name">10</span>
+
+
+                </span>
+
+
+
+            </div>
+            <div class="row">
+                <span class="father">
+                    <img src="static/images/velo2.svg" alt="">
+                    <span class="label label-custom velo-name pull-right">2</span>
+
+                </span>
+                <span class="father">
+                    <img src="static/images/velo3.svg" alt="">
+                    <span class="label label-custom velo-name pull-right">3</span>
+
+                </span>
+                
+                <span class="father">
+                    <img src="static/images/velo4.svg" alt="">
+                    <span class="label label-custom velo-name pull-right">4</span>
+
+                </span>
+
+                <span class="father">
+                    <img src="static/images/velo5.svg" alt="">
+                    <span class="label label-custom velo-name pull-right"> 5</span>
+
+                </span>
+
+                <span class="father">
+                    <img src="static/images/velo6.svg" alt="">
+                    <span class="label label-custom velo-name pull-right"> 6</span>
+
+                </span>
+
+                <span class="father">
+                    <img src="static/images/velo1.svg" alt="">
+                    <span class="label label-custom velo-name pull-right"> 7</span>
+
+                </span>
+
+                <span class="father">
+                    <img src="static/images/velo2.svg" alt="">
+                    <span class="label label-custom velo-name pull-right"> 8</span>
+
+                </span>
+
+                <span class="father">
+                    <img src="static/images/velo3.svg" alt="">
+                    <span class="label label-custom velo-name pull-right"> 9</span>
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <script src="static/gauge.options.js"></script>
+        <script src="static/main.js"></script>
+        <!-- <script type="text/javascript">
+            const target = document.getElementById('gauge'); // your canvas element
+            const gauge = new Gauge(target).setOptions(OPTS); // create sexy gauge!
+            gauge.maxValue = 3000; // set max gauge value
+            gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+            gauge.animationSpeed = 32; // set animation speed (32 is default value)
+            gauge.set(1500); // set actual value
+
+          window.setInterval(() => {
+             var val = Math.floor(Math.random() * 3001); 
+             gauge.set(val)
+         }, 1000);
+        </script> -->
+
+    </body>
+</html>
+
+
