@@ -1,4 +1,4 @@
-# velo-generator
+# Velo-generator
 App to display electricity powered by bikes !
 
 ## Instalation
