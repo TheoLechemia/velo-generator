@@ -23,6 +23,25 @@ First install pip3 and virtualenv
 
 pip install -r requirements.txt
 
+- Install node and npm
+
+See https://github.com/nvm-sh/nvm#installing-and-updating
+
+and then run :
+`nvm install v14`
+
+- Install frontend dependencies
+
+From `static` folder run :
+`npm install`
+
+- Unsample the config file and fill it
+
+`cp config.py.sample config.py`
+
+In order to find USB ID run this command and find the ID of the two USB devices:
+`lsusb`
+
 ## Run application
 
 Virualenv must be activated
