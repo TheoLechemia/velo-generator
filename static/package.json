@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/TheoLechemia/velo-generator#readme",
   "dependencies": {
+    "bootstrap": "^3.4.1",
+    "socket.io": "^3.1.1",
     "vue": "^3.0.5"
   }
 }
