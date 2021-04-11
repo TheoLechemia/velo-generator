@@ -1,6 +1,8 @@
 {
-  "requires": true,
+  "name": "veletrogene",
+  "version": "0.0.1",
   "lockfileVersion": 1,
+  "requires": true,
   "dependencies": {
     "@babel/helper-validator-identifier": {
       "version": "7.12.11",
@@ -8,14 +10,14 @@
       "integrity": "sha512-np/lG3uARFybkoHokJUmf1QfEvRVCPbmQeUQpKow5cQ3xWrV9i3rUHodKDJPQfTVX61qKi+UdYk8kik84n7XOw=="
     },
     "@babel/parser": {
-      "version": "7.12.16",
-      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.12.16.tgz",
-      "integrity": "sha512-c/+u9cqV6F0+4Hpq01jnJO+GLp2DdT63ppz9Xa+6cHaajM9VFzK/iDXiKK65YtpeVwu+ctfS6iqlMqRgQRzeCw=="
+      "version": "7.13.15",
+      "resolved": "https://registry.npmjs.org/@babel/parser/-/parser-7.13.15.tgz",
+      "integrity": "sha512-b9COtcAlVEQljy/9fbcMHpG+UIW9ReF+gpaxDHTlZd0c6/UU9ng8zdySAW9sRTzpvcdCHn6bUcbuYUgGzLAWVQ=="
     },
     "@babel/types": {
-      "version": "7.12.13",
-      "resolved": "https://registry.npmjs.org/@babel/types/-/types-7.12.13.tgz",
-      "integrity": "sha512-oKrdZTld2im1z8bDwTOQvUbxKwE+854zc16qWZQlcTqMN00pWxHQ4ZeOq0yDMnisOpRykH2/5Qqcrk/OlbAjiQ==",
+      "version": "7.13.14",
+      "resolved": "https://registry.npmjs.org/@babel/types/-/types-7.13.14.tgz",
+      "integrity": "sha512-A2aa3QTkWoyqsZZFl56MLUsfmh7O0gN41IPvXAE/++8ojpbz12SszD7JEGYVdn4f9Kt4amIei07swF1h4AqmmQ==",
       "requires": {
         "@babel/helper-validator-identifier": "^7.12.11",
         "lodash": "^4.17.19",
@@ -76,9 +78,9 @@
       "integrity": "sha512-gYsNoGkWejBxNO6SNRjOh/xKeZ0H0V+TFzaPzODfBjkAIb0aQgBuixC1brandC/CDJy1wYPwSoYrXpvul7m6yw=="
     },
     "csstype": {
-      "version": "2.6.14",
-      "resolved": "https://registry.npmjs.org/csstype/-/csstype-2.6.14.tgz",
-      "integrity": "sha512-2mSc+VEpGPblzAxyeR+vZhJKgYg0Og0nnRi7pmRXFYYxSfnOnW8A5wwQb4n4cE2nIOzqKOAzLCaEX6aBmNEv8A=="
+      "version": "2.6.16",
+      "resolved": "https://registry.npmjs.org/csstype/-/csstype-2.6.16.tgz",
+      "integrity": "sha512-61FBWoDHp/gRtsoDkq/B1nWrCUG/ok1E3tUrcNbZjsE9Cxd9yzUirjS3+nAATB8U4cTtaQmAHbNndoFz5L6C9Q=="
     },
     "estree-walker": {
       "version": "2.0.2",
@@ -86,9 +88,9 @@
       "integrity": "sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w=="
     },
     "lodash": {
-      "version": "4.17.20",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
-      "integrity": "sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA=="
+      "version": "4.17.21",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz",
+      "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
     },
     "source-map": {
       "version": "0.6.1",

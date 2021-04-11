@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TheoLechemia/velo-generator/issues"
   },
-  "homepage": "https://github.com/TheoLechemia/velo-generator#readme"
+  "homepage": "https://github.com/TheoLechemia/velo-generator#readme",
+  "dependencies": {
+    "vue": "^3.0.5"
+  }
 }
