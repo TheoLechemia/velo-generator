@@ -1,0 +1,19 @@
+{
+  "name": "veletrogene",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheoLechemia/velo-generator.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheoLechemia/velo-generator/issues"
+  },
+  "homepage": "https://github.com/TheoLechemia/velo-generator#readme"
+}
