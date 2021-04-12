@@ -42,3 +42,7 @@ while True:
     time.sleep(1)
 # r = dev.read(eaddr, 1024)
 # print(r)
+
+
+# Bind to a static port
+# https://unix.stackexchange.com/questions/66901/how-to-bind-usb-device-under-a-static-name

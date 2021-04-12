@@ -24,10 +24,16 @@ const App = {
         socket.on('connect', () => {
           console.log("connected");
         });
-        socket.on("power", (data) => {
+        socket.on("production", (data) => {
           console.log('JY AI Recu ,,')
           console.log(data);
           this.powerProduction = data.list;  
+          this.gauge.set(this.powerProduction)
+        });
+        socket.on("demand", (data) => {
+          console.log('JY AI Recu ,,')
+          console.log(data);
+          this.powerDemand = data.list;  
           this.gauge.set(this.powerProduction)
         });
     },

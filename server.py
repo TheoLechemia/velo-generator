@@ -1,4 +1,5 @@
 import webbrowser
+import serial
 from random import random
 from threading import Thread, Event, Timer
 from flask import Flask, render_template
@@ -7,21 +8,34 @@ from flask_socketio import SocketIO
 async_mode = 'eventlet'
 app = Flask(__name__)
 socket_ = SocketIO(app, async_mode=async_mode, logger=True, engineio_logger=True)
-
+app.config.from_object('config')
 
 thread = Thread()
 thread_stop_event = Event()
+
+try:
+    usb_power_production = serial.Serial(app.config["USB_PRODUCTION_MOUNT_POINT"])
+    usb_power_demand = serial.Serial(app.config["USB_DEMAND_MOUNT_POINT"])
+except serial.SerialException as e:
+    print("""
+        One of the required USB device not found
+    """)
+    print(e)
+    raise
 
 
 def get_power_from_usb():
     while not thread_stop_event.is_set():
         number = round(random()*1000, 3)
         # get value from usb
-        # val = ... 
-        # decoded_val = val.decode('utf-8').rstrip()
+        production = usb_power_production.readline()
+        demand = usb_power_demand.readline()
+        decoded_production = production.decode('utf-8').rstrip()
+        decoded_demand = demand.decode('utf-8').rstrip()
         # power_tab = decoded_val.split(',')
-        socket_.emit('power', {'list': number})
-        socket_.sleep(2)
+        socket_.emit('production', {'list': decoded_production})
+        socket_.emit('demand', {'list': decoded_demand})
+        socket_.sleep(1)
 
 
 
