@@ -14,14 +14,34 @@ body {
    color: #ef5028!important;
 }
 
+.row img {
+    margin-bottom: 60px;
+}
+
 .label-custom {
     background-color: #ef5028!important;
-    height: 25px;
-    width: 25px;
-    line-height: 25px!important;
+    height: 50px;
+    width: 50px;
+    line-height: 50px!important;
     text-align: center;
     border-radius: 50%!important;
     padding: 0!important;
+    font-size: 40px!important;
+}
+
+.label-power-bike{
+    position:absolute;
+    background-color: #ef5028!important;
+    height: 40px;
+    width: 100px;
+    line-height: 40px!important;
+    text-align: center;
+    border-radius: 25%!important;
+    padding: 0!important;
+    left: 10;
+    bottom: -60px;
+    font-size: 30px!important;
+
 }
 
 
@@ -59,9 +79,11 @@ h1, h2, h3, h4, h5 {
     margin: 0 auto;
 }
 .velo-name {
-    /* color: blue; */
+        right: -10;
+    top: blue;
     position: absolute;
-    right: 20;
+    /* right: 0; */
+    bottom: 40;
 }
 #data {
     width: 80%;

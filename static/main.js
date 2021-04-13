@@ -4,7 +4,8 @@ const App = {
         counter: 0, 
         gauge: null,
         currentBalance: 0,
-        powerProduction: null,
+        powerProductionTotal: null,
+        productionByBike: new Array(10),
         powerDemand: null,
       }
     },
@@ -25,9 +26,11 @@ const App = {
           console.log("connected");
         });
         socket.on("production", (data) => {
-          console.log('JY AI Recu ,,')
-          console.log(data);
-          this.powerProduction = data.list;  
+          this.productionByBike = data.list;
+          this.powerProductionTotal = data.list.reduce(function(a,b) {
+            return a + b + 0;
+          })
+          console.log("lalalal", this.powerProductionTotal)
           this.gauge.set(this.powerProduction)
         });
         socket.on("demand", (data) => {
