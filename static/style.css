@@ -1,52 +1,61 @@
-@font-face { font-family: Delicious; src: url('fonts/Fontfabric_UniNeueHeavy.otf'); } 
-@font-face { font-family: Delicious-italic; src: url('fonts/Fontfabric_UniNeueBlack_Italic.otf'); } 
-body {
-    background-color: #fff9eeff!important;
-    /* background-color: rgb(196, 146, 55); */
-    background-image: url('images/background_bis.png');
+@font-face {
+  font-family: Delicious;
+  src: url("fonts/Fontfabric_UniNeueHeavy.otf");
 }
-    
+@font-face {
+  font-family: Delicious-italic;
+  src: url("fonts/Fontfabric_UniNeueBlack_Italic.otf");
+}
+body {
+  background-color: #fff9eeff !important;
+  /* background-color: rgb(196, 146, 55); */
+  background-image: url("images/background_bis.png");
+}
+
 .svg {
-    fill: green;
+  fill: green;
 }
 
 .red-generator {
-   color: #ef5028!important;
+  color: #ef5028 !important;
 }
 
 .row img {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 }
 
 .label-custom {
-    background-color: #ef5028!important;
-    height: 50px;
-    width: 50px;
-    line-height: 50px!important;
-    text-align: center;
-    border-radius: 50%!important;
-    padding: 0!important;
-    font-size: 40px!important;
+  background-color: #ef5028 !important;
+  height: 50px;
+  width: 50px;
+  line-height: 50px !important;
+  text-align: center;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  font-size: 40px !important;
 }
 
-.label-power-bike{
-    position:absolute;
-    background-color: #ef5028!important;
-    height: 40px;
-    width: 100px;
-    line-height: 40px!important;
-    text-align: center;
-    border-radius: 25%!important;
-    padding: 0!important;
-    left: 10;
-    bottom: -60px;
-    font-size: 30px!important;
-
+.label-power-bike {
+  position: absolute;
+  background-color: #ef5028 !important;
+  height: 40px;
+  width: 100px;
+  line-height: 40px !important;
+  text-align: center;
+  border-radius: 25% !important;
+  padding: 0 !important;
+  left: 30;
+  bottom: 0px;
+  font-size: 30px !important;
+  color: white;
 }
 
-
-h1, h2, h3, h4, h5 { 
-    font-family: Delicious, sans-serif !important; 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Delicious, sans-serif !important;
 }
 /* #main-title {
     font-size: 75px;
@@ -56,50 +65,54 @@ h1, h2, h3, h4, h5 {
 } */
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
-#logo{
-    bottom: 0;
-    right: 0;
-    width: 20%;
-    margin: 0 auto;
+#logo {
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  margin: 0 auto;
 }
 
 #app {
-    /* background-color: #d8d8d8d1;
+  /* background-color: #d8d8d8d1;
     border-radius: 50px;
     padding: 20px; */
-    /* width: 50%;
+  /* width: 50%;
     margin: 0 auto; */
 }
 
+.mr-5 {
+  margin-right: 5% !important;
+}
+
 #canvas-container {
-    width: 30%;
-    margin: 0 auto;
+  position: absolute;
+  /* width: 30%; */
+  margin: 0 auto;
+  left: 37%;
 }
 .velo-name {
-        right: -10;
-    top: blue;
-    position: absolute;
-    /* right: 0; */
-    bottom: 40;
+  right: -60;
+  top: -20;
+  position: absolute;
+  color: white;
+  /* right: 0; */
 }
 #data {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .father {
-    position: relative;
+  position: relative !important;
 }
 
-
 .container {
-    /* height: 90vh; */
-    background-color: #d8d8d8d1;
-    border-radius: 50px;
-    padding: 20px;
-
+  /* height: 90vh; */
+  background-color: #d8d8d8d1;
+  border-radius: 50px;
+  padding: 20px;
 }

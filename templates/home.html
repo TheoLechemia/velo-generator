@@ -1,10 +1,11 @@
 <html>
     <head>
-        <link href="static/style.css" type="text/css" rel="stylesheet" />
         <script src="static/node_modules/socket.io/client-dist/socket.io.js"></script>
         <script src="static/node_modules/vue/dist/vue.global.js"></script>
         <script src="static/gauge.min.js"></script>
         <link rel="stylesheet" href="static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link href="static/style.css" type="text/css" rel="stylesheet" />
+
         <style>
             svg {
                 fill:green;
@@ -23,11 +24,9 @@
 
         <div class="container">
             <div id="app">
-                <!-- <h2 id="main-title" class="center"> VÉLECTROGÈNE </h2>
-                <h3 class="center"> LA BICYCLETTE GÉNÉRATRICE D'ÉLECTRICITE </h3> -->
                 
                <div id="canvas-container">
-                <canvas id="gauge"> 
+                <canvas id="gauge" height="280" width="480"> 
                 </canvas>
                     <div id="data">
                         <h4>PRODUCTION <span class="red-generator"> <br> ${powerProductionTotal} </span>  </h4>
@@ -37,76 +36,78 @@
                </div>
     
             <div class="row">
-                <span class="father">
+                <div class="col-sm-1 father">
                     <img src="static/images/velo1.svg" alt="">
                     <span class="label label-custom velo-name">1</span>
-                        <div class="label label-power-bike"> ${productionByBike[0]} kW </div>
+                    <div class="label label-power-bike"> ${productionByBike[0]} kW </div>
+                </div>
 
-
-                     <!-- <span>1</span> -->
-
-                </span>
-
-                <span class="father">
+                <div class="col-sm-1 offset-md-9 father">
                     <img src="static/images/velo4.svg" alt="">
                     <span class="label label-custom velo-name">10</span>
                     <div class="label label-power-bike"> ${productionByBike[9]} kW </div>
 
-                </span>
+                </div>
+
 
 
 
             </div>
+            <div style="height: 50px;"></div>
+
             <div class="row">
-                <span class="father">
+                <span class="col-sm-1 father father">
                     <img src="static/images/velo2.svg" alt="">
                     <span class="label label-custom velo-name pull-right">2</span>
                         <div class="label label-power-bike"> ${productionByBike[1]} kW </div>
 
 
                 </span>
-                <span class="father">
+                <span class="col-sm-1 offset-md-9 father">
                     <img src="static/images/velo3.svg" alt="">
                     <span class="label label-custom velo-name pull-right">3</span>
                     <div class="label label-power-bike"> ${productionByBike[2]} kW </div>
 
                 </span>
-                
-                <span class="father">
+            </div>
+            <div style="height: 50px;"></div>
+
+            <div class="row">
+                <span class="offset-md-1 col-sm-1 mr-5 father">
                     <img src="static/images/velo4.svg" alt="">
                     <span class="label label-custom velo-name pull-right">4</span>
                     <div class="label label-power-bike"> ${productionByBike[3]} kW </div>
                 </span>
 
-                <span class="father">
+                <span class="col-sm-1 father mr-5">
                     <img src="static/images/velo5.svg" alt="">
                     <span class="label label-custom velo-name pull-right"> 5</span>
                     <div class="label label-power-bike"> ${productionByBike[4]} kW </div>
 
                 </span>
 
-                <span class="father">
+                <span class="col-sm-1 father mr-5">
                     <img src="static/images/velo6.svg" alt="">
                     <span class="label label-custom velo-name pull-right"> 6</span>
                     <div class="label label-power-bike"> ${productionByBike[5]} kW </div>
 
                 </span>
 
-                <span class="father">
+                <span class="col-sm-1 father mr-5">
                     <img src="static/images/velo1.svg" alt="">
                     <span class="label label-custom velo-name pull-right"> 7</span>
                     <div class="label label-power-bike"> ${productionByBike[6]} kW </div>
 
                 </span>
 
-                <span class="father">
+                <span class="col-sm-1 father mr-5">
                     <img src="static/images/velo2.svg" alt="">
                     <span class="label label-custom velo-name pull-right"> 8</span>
                     <div class="label label-power-bike"> ${productionByBike[7]} kW </div>
 
                 </span>
 
-                <span class="father">
+                <span class="col-sm-1 father">
                     <img src="static/images/velo3.svg" alt="">
                     <span class="label label-custom velo-name pull-right"> 9</span>
                     <div class="label label-power-bike"> ${productionByBike[8]} kW </div>
