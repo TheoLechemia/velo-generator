@@ -1,7 +1,10 @@
 # Velo-generator
+
 App to display electricity powered by bikes !
 
-## Instalation
+![Velectrogene](velectrogene-preview.jpg)
+
+## Installation
 
 Velo generator is a python3 / Flask web application
 
