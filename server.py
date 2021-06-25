@@ -46,26 +46,34 @@ def calc (registers, factor):
         return format % (((1.0 * registers[1] * 65535) + (1.0 * registers[0])) / factor)
 
 def parse_power(usb_stream:list):
-    power_list = []
-    for s in usb_stream:
-        decode_stream = s.decode('utf-8').rstrip()
-        temp = decode_stream.split(";")
-        if temp:
-            temp.pop(0)
-            production_str = temp[len(temp)-1]
-            production_list = production_str.split(",")
-            # remove last element
-            production_list.pop(len(production_list) -1)
-            # cast in float
-            production_list = list(map(lambda x: float(x) * 12, production_list))
-            power_list = [*power_list, *production_list]
+    try:
+        power_list = []
+        for s in usb_stream:
+            decode_stream = s.decode('utf-8').rstrip()
+            temp = decode_stream.split(";")
+            if temp:
+                temp.pop(0)
+                production_str = temp[len(temp)-1]
+       
+                production_list = production_str.split(",")
+                # remove last element
+                production_list.pop(len(production_list) -1)
+                # cast in float
+                production_list = list(map(lambda x: float(x) * 12, production_list))
+                power_list = [*power_list, *production_list]
+    except IndexError:
+        print("EROOOOOO0R")
+        return [0,0,0,0,0,0,0,0,0,0]
     return power_list
 
 def get_power_from_usb():
     while not thread_stop_event.is_set():
         # get value from usb
+        demand = {}
         production1 = usb_power_production1.readline()
+        print("VELO1", production1)
         production2 = usb_power_production2.readline()
+        print("VELO2", production2)
         production = parse_power([production1, production2])
         if client.connect():
             try:
