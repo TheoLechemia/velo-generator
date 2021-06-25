@@ -1,9 +1,13 @@
+import math
 import webbrowser
 import serial
+import json
 from random import random
 from threading import Thread, Event, Timer
 from flask import Flask, render_template
 from flask_socketio import SocketIO
+from pymodbus.client.sync import ModbusSerialClient as ModbusClient
+
 
 async_mode = 'eventlet'
 app = Flask(__name__)
@@ -14,8 +18,18 @@ thread = Thread()
 thread_stop_event = Event()
 
 try:
-    usb_power_production1 = serial.Serial(app.config["USB_PRODUCTION_MOUNT_POINT"])
-    usb_power_production2 = serial.Serial(app.config["USB_DEMAND_MOUNT_POINT"])
+    usb_power_production1 = serial.Serial(app.config["USB_PRODUCTION_MOUNT_POINT_1"])
+    usb_power_production2 = serial.Serial(app.config["USB_PRODUCTION_MOUNT_POINT_2"])
+    client = ModbusClient(
+        method = "rtu", 
+        port=app.config["USB_DEMAND_MOUNT_POINT"], 
+        stopbits = 1, 
+        bytesize = 8, 
+        parity = 'N', 
+        baudrate = 9600
+    )
+
+
 except serial.SerialException as e:
     print("""
         One of the required USB device not found
@@ -23,11 +37,18 @@ except serial.SerialException as e:
     print(e)
     raise
 
+
+def calc (registers, factor):
+    format = '%%0.%df' % int (math.ceil (math.log10 (factor)))
+    if len(registers) == 1:
+        return format % ((1.0 * registers[0]) / factor)
+    elif len(registers) == 2:
+        return format % (((1.0 * registers[1] * 65535) + (1.0 * registers[0])) / factor)
+
 def parse_power(usb_stream:list):
     power_list = []
     for s in usb_stream:
         decode_stream = s.decode('utf-8').rstrip()
-        print("OHHH", decode_stream)
         temp = decode_stream.split(";")
         if temp:
             temp.pop(0)
@@ -36,7 +57,7 @@ def parse_power(usb_stream:list):
             # remove last element
             production_list.pop(len(production_list) -1)
             # cast in float
-            production_list = list(map(lambda x: float(x), production_list))
+            production_list = list(map(lambda x: float(x) * 12, production_list))
             power_list = [*power_list, *production_list]
     return power_list
 
@@ -45,9 +66,27 @@ def get_power_from_usb():
         # get value from usb
         production1 = usb_power_production1.readline()
         production2 = usb_power_production2.readline()
-        result = parse_power([production1, production2])
-        socket_.emit('production', {'list': result})
+        production = parse_power([production1, production2])
+        if client.connect():
+            try:
+                demand_result = client.read_input_registers(0x0000, 10, unit = 0x01)
+                demand = {
+                    "voltage": calc(demand_result.registers[0:1], 10),
+                    "power": calc(demand_result.registers[3:5], 10),
+                    "frequency": calc(demand_result.registers[7:8], 10)
+                }
+            finally:
+                client.close()
+
+        else:
+            print("NOT CONNECTED")
+        socket_.emit(
+            "data", json.dumps({"production": production, "demand": demand})
+        )
+
         socket_.sleep(1)
+    
+
 
 
 

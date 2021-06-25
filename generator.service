@@ -1,0 +1,13 @@
+[Unit]
+Description=velogenerator
+
+[Service]
+Type=simple
+ExecStart=PATH_TO_LAUNCH --service
+KillMode=mixed
+TimeoutStopSec=30
+User=My_USER
+LimitNOFILE=100000
+
+[Install]
+WantedBy=multi-user.target
