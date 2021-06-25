@@ -13,3 +13,5 @@ python-socketio==5.1.0
 six==1.15.0
 Werkzeug==1.0.1
 pyusb==1.1.1
+pymodbus
+pyserial
