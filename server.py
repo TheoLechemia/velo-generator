@@ -53,13 +53,13 @@ def parse_power(usb_stream:list):
             temp = decode_stream.split(";")
             if temp:
                 temp.pop(0)
-                production_str = temp[len(temp)-1]
-       
+                # production_str = temp[len(temp)-1]
+                production_str = temp[0]
                 production_list = production_str.split(",")
                 # remove last element
-                production_list.pop(len(production_list) -1)
+                # production_list.pop(len(production_list) -1)
                 # cast in float
-                production_list = list(map(lambda x: float(x) * 12, production_list))
+                production_list = list(map(lambda x: float(x), production_list))
                 power_list = [*power_list, *production_list]
     except IndexError:
         print("EROOOOOO0R")
@@ -92,7 +92,7 @@ def get_power_from_usb():
             "data", json.dumps({"production": production, "demand": demand})
         )
 
-        socket_.sleep(1)
+        socket_.sleep(0)
     
 
 

@@ -27,11 +27,13 @@ const App = {
     });
     socket.on("data", (data) => {
       data = JSON.parse(data)
+      console.log(data);
       this.productionByBike = data.production;
       this.powerProductionTotal = data.production.reduce(function (a, b) {
         return a + b + 0;
-      })
-      this.powerDemand = data.demand.power;
+      });
+      this.powerProductionTotal = Math.floor(this.powerProductionTotal)
+      this.powerDemand = Math.floor(data.demand.power);
       this.currentBalance = this.powerProductionTotal - this.powerDemand;
       // HACK pour pas que les valeur dépassent -100 et 100
       if (this.currentBalance > 100) {
