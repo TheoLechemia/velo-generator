@@ -16,7 +16,7 @@ First install pip3 and virtualenv
 
 - Create a virtualenv
 
-`virtualenv -p /usr/lib/python3 venv`
+python3 -m virtualenv -p /usr/bin/python3 venv
 
 - Activate the virtualenv
 
