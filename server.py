@@ -30,9 +30,9 @@ try:
     )
 
 
-except serial.SerialException as e:
+except Exception as e:
     print("""
-        One of the required USB device not found
+        One of the required USB device not found, or faile to connect to one of USB device
     """)
     print(e)
     raise
@@ -59,7 +59,7 @@ def parse_power(usb_stream:list):
                 # remove last element
                 # production_list.pop(len(production_list) -1)
                 # cast in float
-                production_list = list(map(lambda x: float(x), production_list))
+                production_list = list(map(lambda x: round(float(x)), production_list))
                 power_list = [*power_list, *production_list]
     except IndexError:
         print("EROOOOOO0R")
