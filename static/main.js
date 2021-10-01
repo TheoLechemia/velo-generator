@@ -34,7 +34,8 @@ const App = {
       });
       this.powerProductionTotal = Math.floor(this.powerProductionTotal)
       this.powerDemand = Math.floor(data.demand.power);
-      this.currentBalance = this.powerProductionTotal - this.powerDemand;
+      // set currentBalance in %
+      this.currentBalance = (Math.round(this.powerProductionTotal / this.powerDemand -1 ) * 100);
       // HACK pour pas que les valeur dépassent -100 et 100
       if (this.currentBalance > 100) {
         this.currentBalance = 100

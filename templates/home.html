@@ -32,7 +32,7 @@
                 <div id="data">
                     <h4>PRODUCTION <span class="red-generator"> <br> ${powerProductionTotal} W </span> </h4>
                     <h4>CONSOMMATION <span class="red-generator"> <br> ${powerDemand} W </span> </h4>
-                    <h4>BALANCE <span class="red-generator"> <br> ${ powerProductionTotal - powerDemand } W </span>
+                    <h4>BALANCE <span class="red-generator"> <br> ${Math.sign(currentBalance) == 1 ? "+": ""} ${ currentBalance } % </span>
                     </h4>
                 </div>
 
